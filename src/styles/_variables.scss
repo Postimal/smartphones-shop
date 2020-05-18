@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:ital@1&display=swap');
+
+$pencil: #2c3238;
+$black: #000000;
+$paper: #f7fafc;
+$ocean: #35beca;
+$gray: #7a7070;
+$lightwhite: #f8f8ff;
+$purple : #663399;
+
+
+$primary-font-color:   $pencil;
+$secondary-font-color: $black;
+$tertiary-font-color: $gray;
+
+$background-color: $paper;
+$background-color-hover: $ocean;
+
+$layout-color: $lightwhite;
+
+$svg-color:  $purple;
+
+$primary-font: 'Roboto', sans-serif;
+$banner-font: 'Lobster', cursive;

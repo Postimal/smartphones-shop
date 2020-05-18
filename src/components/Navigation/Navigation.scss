@@ -1,0 +1,68 @@
+@import './../../styles/variables';
+
+.navigation-container {
+    height: 3.5rem;
+    background-color: $background-color;
+    max-width: 1600px;
+    margin: 0 auto;
+    margin-left: 215px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #e4e7eb;
+
+
+    .navigation-panel {
+        &__nav-item {
+            box-sizing: border-box;
+            position: relative;
+            display: inline-block;
+            padding: 0 1rem;
+            line-height: 3.5rem;
+            border-radius: 8px;
+            transition: background-color .25s ease-in-out;
+
+            &:hover {
+                background: linear-gradient(40deg,#d6e9eba4 30%, #dde7e6 62%, #d0e0e6a4 82%);
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                width: 90%;
+                transform: scaleX(0);
+                height: 2px;
+                bottom: 0;
+                left: 5%;
+                transform-origin: bottom right;
+                transition: transform 0.3s ease-out;
+                background-color: $background-color-hover;
+            }
+            &:hover:after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+            }
+        }
+    }
+
+    &__cart {
+        position: relative;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    .cart__items-number{
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        left: 22px;
+        top: 0;
+        color: #fff;
+        font-size: 12px;
+        text-align: center;
+        line-height: 20px;
+        border-radius: 100%;
+        background-color: #ff0000;
+    }
+
+}

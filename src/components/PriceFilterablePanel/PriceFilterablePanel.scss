@@ -1,0 +1,77 @@
+@import './../../styles/variables';
+
+.form-group {
+  position: relative;
+  color: $tertiary-font-color;
+
+  input {
+    width: 70%;
+    margin: 0 5%;
+  }
+
+  &__price {
+    display: block;
+    padding: 5px 10px;
+    text-align: center;
+    color: $secondary-font-color;
+  }
+
+  &__price-min {
+    position: absolute;
+    top: 65px;
+    left: 5px;
+  }
+  &__price-max {
+    position: absolute;
+    top: 65px;
+    right: -2px;
+  }
+
+$track-w: 90%;
+$track-h: .35rem;
+$thumb-d: 1.1rem;
+
+@mixin track() {
+    box-sizing: border-box;
+    border: none;
+    width: $track-w; height: $track-h;
+    background: #ccc;
+}
+
+@mixin thumb() {
+    box-sizing: border-box;
+    border: none;
+    width: $thumb-d; height: $thumb-d;
+    border-radius: 50%;
+    background: #000;
+}
+
+[type='range'] {
+    &, &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+    }
+    width: $track-w; height: $thumb-d;
+    background: transparent;
+    font: 1em/1 arial, sans-serif;
+
+    &::-webkit-slider-runnable-track {
+        @include track
+    }
+    &::-moz-range-track { @include track }
+    &::-ms-track { @include track }
+
+    &::-webkit-slider-thumb {
+        margin-top: .5*($track-h - $thumb-d);
+        @include thumb
+    }
+    &::-moz-range-thumb { @include thumb }
+    &::-ms-thumb {
+        margin-top: 0;
+        @include thumb
+    }
+
+    &::-ms-tooltip { display: none }
+}
+
+
+}

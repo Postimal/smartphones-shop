@@ -1,0 +1,38 @@
+.cart-item {
+    height: 100px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+
+    p {
+        margin: 2px;
+        font-size: 0.8rem;
+    }
+
+    &__col2 {
+        position: relative;
+        width: 70%;
+    }
+
+    &__img {
+        height: 50px;
+    }
+
+    &__btn {
+        border: none;
+        background-color: transparent;
+    }
+
+    .btn--remove {
+        position: absolute;
+        top: 10%;
+        right: 0;
+       
+    }
+   
+    &__price {
+        position: absolute;
+        right: 0;
+    }
+}

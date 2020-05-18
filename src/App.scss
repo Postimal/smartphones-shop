@@ -1,0 +1,60 @@
+@import './styles/variables';
+
+*{
+  box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5 {
+  color:$tertiary-font-color;
+  font-weight: normal;
+}
+
+body {
+  font-family: $primary-font;
+  background: $layout-color;
+}
+
+button,
+button:focus,
+button:active {
+	outline: none;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+label {
+  font-size: 14px;
+}
+.content {
+  max-width: 1600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.main-container {
+  display: flex;
+  padding: 1rem;
+
+  &__filters {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem 0 0.2rem;
+    border-right: 1px solid #e4e7eb;
+    font-family: 'Helvetica Neue', Helvetica, Arial, Tahoma, sans-serif;
+  }
+}
+
+ .navigation-container svg {
+   height: 40px;
+   width: 40px;
+   fill: $svg-color;
+ }
