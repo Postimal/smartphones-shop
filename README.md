@@ -2,7 +2,8 @@ In progress (Redux)
 
 To run in local machine:
 - clone repo
-- create .env file and add localhost as REACT_APP_API_URL
+- npm install to install dependencies
+- create .env file and add localhost as REACT_APP_API_URL (port 3001)
 - npm run start:db
 - npm start
 

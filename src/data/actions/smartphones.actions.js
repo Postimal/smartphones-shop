@@ -8,6 +8,7 @@ import {
   SORT_BY_PRICE,
   FILTER_PRICE,
   CART_OPEN,
+  CLEAR_CART,
 } from '../constants';
 
 export const fetchSmartphones = id => async dispatch => {
@@ -67,5 +68,9 @@ export const  decrement = payload => ({
 
 export const  toggleCart = () => ({
   type: CART_OPEN,
+});
+
+export const  clearCart = () => ({
+  type: CLEAR_CART,
 });
 

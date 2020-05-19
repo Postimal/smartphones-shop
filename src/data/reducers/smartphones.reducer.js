@@ -8,6 +8,11 @@ import {
   SORT_BY_COLOR,
   FILTER_PRICE,
   CART_OPEN,
+  CLEAR_CART,
+  ADD_TO_CART,
+  REMOVE_FROM_CART,
+  INCREMENT,
+  DECREMENT,
 } from '../constants';
 import { sortAsc, sortDesc } from '../../utils/helpers';
 
@@ -32,12 +37,13 @@ function smartphonesReducer(state = initialState, action) {
         ...state,
         loadingState: {
           ...state.loadingState,
-          [action.type]: LOADING_STATES.LOADING,   // wzielimsy po kluczu wartość w razie jakby klucz sie mam zmienic
+          [action.type]: LOADING_STATES.LOADING,
         },
       };
     case SMARTPHONES_GET_SUCCESS:
       delete newLoadingState.SMARTPHONES_GET_REQUEST;
       const maxPrice = Math.max(...action.payload.map(smartphone => smartphone.price));
+      const minPrice = Math.min(...action.payload.map(smartphone => smartphone.price));
 
       return {
         ...state,
@@ -45,7 +51,7 @@ function smartphonesReducer(state = initialState, action) {
         currentFiltered: action.payload,
         loadingState: newLoadingState,
         maxPrice: maxPrice,
-        minPrice: Math.min(...action.payload.map(smartphone => smartphone.price)),
+        minPrice: minPrice,
         price: maxPrice,
       };
 
@@ -89,28 +95,28 @@ function smartphonesReducer(state = initialState, action) {
         price: action.payload,
       };
 
-    case 'ADD_TO_CART':
+    case ADD_TO_CART:
       return {
         ...state,
         currentFiltered: [...state.currentFiltered.map(smartphone => smartphone.id === action.payload ? { ...smartphone, inCart: true, total: 1 } : smartphone,
         )],
       };
 
-    case 'REMOVE_FROM_CART':
+    case REMOVE_FROM_CART:
       return {
         ...state,
         currentFiltered: [...state.currentFiltered.map(smartphone => smartphone.id === action.payload ? { ...smartphone, inCart: false, total: 0 } : smartphone,
         )],
       };
 
-    case 'INCREMENT':
+    case INCREMENT:
       return {
         ...state,
         currentFiltered: [...state.currentFiltered.map(smartphone => smartphone.id === action.payload ? { ...smartphone, total: smartphone.total + 1 } : smartphone,
         )],
       };
 
-    case 'DECREMENT':
+    case DECREMENT:
       return {
         ...state,
         currentFiltered: [...state.currentFiltered.map(smartphone => smartphone.id === action.payload ? { ...smartphone, total: smartphone.total + -1 } : smartphone,
@@ -121,6 +127,16 @@ function smartphonesReducer(state = initialState, action) {
       return {
         ...state,
         isCartOpen: !state.isCartOpen,
+      };
+
+    case CLEAR_CART:
+      return {
+        ...state,
+        currentFiltered: [...state.currentFiltered.map(smartphone => {
+          smartphone.total = 0;
+          smartphone.inCart = false;
+          return { ...smartphone };
+        })],
       };
 
     default:

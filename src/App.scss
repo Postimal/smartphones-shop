@@ -15,6 +15,13 @@ body {
 }
 
 button,
+select,
+input,
+[role=button] {
+  cursor: pointer;
+}
+
+button,
 button:focus,
 button:active {
 	outline: none;
@@ -58,3 +65,5 @@ label {
    width: 40px;
    fill: $svg-color;
  }
+
+

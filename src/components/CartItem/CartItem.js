@@ -32,10 +32,27 @@ const CartItem = ({ item, removeFromCart, increment, decrement }) => {
       <div className="cart-item__col2">
         <p className="cart-item__title">{item.title}</p>
         <p className="cart-item__company">{item.company}</p>
-        <p className="cart-item__total">{item.total}</p>
-        <button className="cart-item__btn btn--increment"onClick={()=>incrementProduct(item.id)}>+</button>
-        <button className="cart-item__btn btn--decrement"onClick={()=>decrementProduct(item.id)}>-</button>
-        <button className="cart-item__btn btn--remove" onClick={()=>handleRemove(item.id)} ><RemoveIconSVG /></button>
+        <div style={{ display: 'flex' }}>
+          <button
+            className="cart-item__btn btn--decrement"
+            onClick={()=>decrementProduct(item.id)}
+          >
+            -
+          </button>
+          <p className="cart-item__amount">{item.total}</p>
+          <button
+            className="cart-item__btn btn--increment"
+            onClick={()=>incrementProduct(item.id)}
+          >
+            +
+          </button>
+        </div>
+        <button
+          className="cart-item__btn btn--remove"
+          onClick={()=>handleRemove(item.id)}
+        >
+          <RemoveIconSVG />
+        </button>
         <p className="cart-item__price">{item.price} $</p>
       </div>
     </li>
