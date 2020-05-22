@@ -11,7 +11,6 @@ function App({ fetchSmartphones, currentFiltered, isCartOpen }) {
     fetchSmartphones('smartphones');
   }, [fetchSmartphones]);
 
-
   return (
     <div>
       <main className="main-container">

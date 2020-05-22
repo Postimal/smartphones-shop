@@ -4,14 +4,13 @@ import { filterPrice } from 'data/actions/smartphones.actions';
 
 import './PriceFilterablePanel.scss';
 
-
 const PriceFilterablePanel = ({ minPrice, maxPrice, price, filterPrice }) => {
   const handleChange = event => {
     const value = event.target.value;
     filterPrice(value);
   };
 
-  return ( // dac tu before i after jako min i max price
+  return (
     <div className="form-group">
       <label htmlFor="price">Price</label>
       <span className="form-group__price">${price}</span>

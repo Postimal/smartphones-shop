@@ -1,8 +1,12 @@
 @import '../../styles/variables';
+@import '../../styles/animations';
+
 
 .shop-banner {
     text-align: center;
     text-transform: uppercase;
     font-size: 2.5rem;
     font-family: $banner-font;
+    -webkit-animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }

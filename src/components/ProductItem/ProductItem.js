@@ -6,7 +6,6 @@ import { addToCart } from 'data/actions/smartphones.actions';
 import { StarRating } from 'components';
 import { ReactComponent as CartSVG } from 'data/img/cart.svg';
 
-
 import './ProductItem.scss';
 
 const ProductItem = ({ item: { id, title, img, price, inCart, colors }, addToCart }) => {

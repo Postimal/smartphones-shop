@@ -1,4 +1,5 @@
 @import './../../styles/variables';
+@import '../../styles/animations';
 
 .navigation-container {
     height: 3.5rem;
@@ -20,6 +21,8 @@
             line-height: 3.5rem;
             border-radius: 8px;
             transition: background-color .25s ease-in-out;
+            -webkit-animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+            animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 
             &:hover {
                 background: linear-gradient(40deg,#d6e9eba4 30%, #dde7e6 62%, #d0e0e6a4 82%);
@@ -49,6 +52,12 @@
         border: none;
         background: transparent;
         cursor: pointer;
+        
+        &.animate {
+            -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
+            animation: heartbeat 1.5s ease-in-out infinite both;
+        }
+        
     }
 
     .cart__items-number{

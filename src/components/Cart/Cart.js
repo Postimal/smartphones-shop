@@ -4,7 +4,6 @@ import { PayPalButton, CartItem } from 'components';
 import { toggleCart, clearCart } from 'data/actions/smartphones.actions';
 import { ReactComponent as EmptyCartIconSVG } from 'data/img/emptyCart.svg';
 
-
 import './Cart.scss';
 
 export const Cart = ({ inCart, toggleCart, clearCart }) => { // dałem tu named export zeby mozna bylo testoac bez buga przez owrapowanie w connect
@@ -47,7 +46,7 @@ export const Cart = ({ inCart, toggleCart, clearCart }) => { // dałem tu named 
             Clear Cart
           </button>
           <div className="cart__total">Total:{' '}{getTotal()} $</div>
-          <PayPalButton total={getTotal()} />
+          {/* <PayPalButton total={getTotal()} /> */}
         </div>
         :
         <div className="cart__list-empty">
