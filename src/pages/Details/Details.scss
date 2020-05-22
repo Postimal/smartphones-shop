@@ -1,0 +1,24 @@
+
+.details-section {
+  max-width: 1000px;
+  min-height: 70vh;
+  margin: 0 auto;
+  padding: 2rem;
+
+  .detail-item {
+    display: flex;
+
+    &__img img {
+      width: 250px;
+      height: auto;
+    }
+  }
+
+  .detail-box {
+    max-width: 60%;;
+    &__info {
+      font-size: 0.8rem;
+    }
+  }
+
+}

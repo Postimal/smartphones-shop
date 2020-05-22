@@ -17,11 +17,13 @@ const Navigation = ({ toggleCart, inCartProductsNumber }) => {
   const cartRef = useRef();
 
   useEffect(() => {
-    cartRef.current.classList.add('animate');
-    const id = setTimeout(()=>{cartRef.current.classList.remove('animate');}, 1500);
-    return () => {
-      window.clearTimeout(id);
-    };
+    if(inCartProductsNumber) {
+      cartRef.current.classList.add('animate');
+      const id = setTimeout(()=>{cartRef.current.classList.remove('animate');}, 1500);
+      return () => {
+        window.clearTimeout(id);
+      };
+    }
   }, [inCartProductsNumber]);
 
   return (

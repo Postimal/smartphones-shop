@@ -46,7 +46,7 @@ export const Cart = ({ inCart, toggleCart, clearCart }) => { // dałem tu named 
             Clear Cart
           </button>
           <div className="cart__total">Total:{' '}{getTotal()} $</div>
-          {/* <PayPalButton total={getTotal()} /> */}
+          <PayPalButton total={getTotal()} />
         </div>
         :
         <div className="cart__list-empty">
