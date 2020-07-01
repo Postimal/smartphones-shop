@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { removeFromCart, increment, decrement } from  'data/actions/smartphones.actions';
-import { ReactComponent as RemoveIconSVG } from 'data/img/remove_btn.svg';
+import { ReactComponent as TrashBinSVG } from 'data/img/bin.svg';
 
 
 import './CartItem.scss';
@@ -51,9 +51,9 @@ const CartItem = ({ item, removeFromCart, increment, decrement }) => {
           className="cart-item__btn btn--remove"
           onClick={()=>handleRemove(item.id)}
         >
-          <RemoveIconSVG />
+          <TrashBinSVG />
         </button>
-        <p className="cart-item__price">{item.price} $</p>
+        <p className="cart-item__price">${item.price}</p>
       </div>
     </li>
   );

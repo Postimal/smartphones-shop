@@ -25,7 +25,7 @@ const ProductItem = ({ item: { id, title, img, price, inCart, colors }, addToCar
         <div className="product-item__title">
           {title}
         </div>
-        <p className="product-item__price">{price} $</p>
+        <p className="product-item__price">${price}</p>
         <StarRating />
         <button className="product-item__cart-btn" disabled={inCart ? true : false} onClick={()=>{ addToCartHandler(id);}}>
           {inCart ? (

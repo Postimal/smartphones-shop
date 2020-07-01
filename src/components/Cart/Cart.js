@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { PayPalButton, CartItem } from 'components';
 import { toggleCart, clearCart } from 'data/actions/smartphones.actions';
 import { ReactComponent as EmptyCartIconSVG } from 'data/img/emptyCart.svg';
+import { ReactComponent as TrashBinSVG } from 'data/img/bin.svg';
+
 
 import './Cart.scss';
 
@@ -43,9 +45,10 @@ export const Cart = ({ inCart, toggleCart, clearCart }) => { // dałem tu named 
             className="cart__btn btn--clear"
             onClick={clearCart}
           >
-            Clear Cart
+            <TrashBinSVG />
+            <span>Clear</span>
           </button>
-          <div className="cart__total">Total:{' '}{getTotal()} $</div>
+          <div className="cart__total"><div>Total</div><div>${getTotal()}</div></div>
           <PayPalButton total={getTotal()} />
         </div>
         :
