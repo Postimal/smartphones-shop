@@ -26,9 +26,34 @@ export function sortDesc(arr, field) {
   });
 }
 
+function highlightColor(e){
+  const allTabs = e.target.parentElement.parentElement.childNodes;
+  allTabs.forEach(el => el.classList.remove('selected'));
+  e.target.closest('li').classList.add("selected");
+}
+
+
+export  const colorKeyPressHandler = (color, e) => {
+  if(e.code === 13) {
+    let imgTag = e.target.parentElement.parentElement.parentElement.parentElement.firstElementChild.firstElementChild;
+    if (imgTag.src === undefined) { 
+      imgTag = e.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.firstElementChild.firstElementChild;
+      }
+    if (imgTag.src === undefined) return;
+    const phoneNameUrl = imgTag.src.split('/');
+    const phoneNameSplitArray = phoneNameUrl[phoneNameUrl.length - 1].split('.')[0].split('_');
+    const phoneName = phoneNameSplitArray.splice(0, phoneNameSplitArray.length - 1).join('_');
+    imgTag.src = require(`../data/img/${phoneName}_${color}.png`);
+  }
+};
 
 export  const colorHandler = (color, e) => {
-  const imgTag = e.target.parentElement.parentElement.parentElement.parentElement.firstElementChild.firstElementChild;
+  highlightColor(e);
+  let imgTag = e.target.parentElement.parentElement.parentElement.parentElement.firstElementChild.firstElementChild;
+  if (imgTag.src === undefined) { 
+    imgTag = e.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.firstElementChild.firstElementChild;
+    }
+  if (imgTag.src === undefined) return;
   const phoneNameUrl = imgTag.src.split('/');
   const phoneNameSplitArray = phoneNameUrl[phoneNameUrl.length - 1].split('.')[0].split('_');
   const phoneName = phoneNameSplitArray.splice(0, phoneNameSplitArray.length - 1).join('_');

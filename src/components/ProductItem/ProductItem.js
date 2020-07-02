@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { colorHandler } from 'utils/helpers';
+
 import { addToCart } from 'data/actions/smartphones.actions';
-import { StarRating } from 'components';
+import { StarRating, ColorPicker } from 'components';
 import { ReactComponent as CartSVG } from 'data/img/cart.svg';
 
 import './ProductItem.scss';
@@ -34,15 +34,7 @@ const ProductItem = ({ item: { id, title, img, price, inCart, colors }, addToCar
             <CartSVG />
           )}
         </button>
-        <div className="product-item__colors-wrapper">
-          <ul className="color-list">
-            {colors.map(color =>(
-              <li className="color__item" key={color} >
-                <span onClick={colors.length > 1 ? e=>colorHandler(color, e) : undefined} className="color__item-tab" style={{ backgroundColor: `${ color }` }} />
-              </li>
-            ))}
-          </ul>
-        </div>
+        <ColorPicker colors={colors}/>
       </div>
     </li>
   );

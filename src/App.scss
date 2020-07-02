@@ -23,8 +23,13 @@ input,
 
 button,
 button:focus,
-button:active {
+button:active,
+span:focus {
 	outline: none;
+}
+
+button:focus {
+   background-color: #ddd;
 }
 
 a{
@@ -65,5 +70,7 @@ label {
    width: 40px;
    fill: $svg-color;
  }
+
+ 
 
 

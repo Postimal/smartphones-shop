@@ -10,4 +10,5 @@ export { default as Navigation } from './Navigation';
 export { default as SorterPanel } from './SorterPanel';
 export { default as Banner } from './Banner';
 export { default as StarRating } from './StarRating';
+export { default as ColorPicker } from './ColorPicker';
 

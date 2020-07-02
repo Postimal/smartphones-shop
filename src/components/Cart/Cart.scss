@@ -46,11 +46,11 @@
     }
 
     &__name {
-        margin: 5px 5px;
+        margin: 5px 0.5rem;
     }
 
     &__header {
-        margin: 10px 5px;
+        margin: 10px 0.5rem;
         font-size: normal;
     }
 
@@ -90,7 +90,7 @@
     &__total {
         display: flex;
         justify-content: space-between;
-        margin: 0.2rem 0;
+        margin: 0.6rem 0;
         padding: .5rem 1rem;
         font-weight: bold;
         text-align: center;
